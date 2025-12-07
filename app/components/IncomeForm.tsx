@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useActionState } from 'react'
-import { addIncome } from '../actions'
-import { FormButton } from './FormButton'
+import { useActionState } from 'react';
+import { addIncome } from '../actions';
+import { FormButton } from './FormButton';
 
 export function IncomeForm() {
-  const [state, formAction] = useActionState(addIncome, null)
+  const [state, formAction] = useActionState(addIncome, null);
 
   return (
     <form action={formAction} className="flex gap-4">
@@ -23,6 +23,6 @@ export function IncomeForm() {
         <div className="text-red-600">{state.error}</div>
       )}
     </form>
-  )
+  );
 }
 

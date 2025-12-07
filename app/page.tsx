@@ -1,22 +1,22 @@
-import { prisma } from '@/lib/prisma'
-import { IncomeForm } from './components/IncomeForm'
-import { EnvelopeForm } from './components/EnvelopeForm'
-import { MoveForm } from './components/MoveForm'
-import { SpendForm } from './components/SpendForm'
+import { prisma } from '@/lib/prisma';
+import { IncomeForm } from './components/IncomeForm';
+import { EnvelopeForm } from './components/EnvelopeForm';
+import { MoveForm } from './components/MoveForm';
+import { SpendForm } from './components/SpendForm';
 
 async function getData() {
   const envelopes = await prisma.envelope.findMany({
     orderBy: { name: 'asc' },
-  })
-  const income = await prisma.income.findFirst()
+  });
+  const income = await prisma.income.findFirst();
   return {
     envelopes,
     incomeBalance: income?.balance ?? 0,
-  }
+  };
 }
 
 export default async function Home() {
-  const { envelopes, incomeBalance } = await getData()
+  const { envelopes, incomeBalance } = await getData();
 
   return (
     <div className="min-h-screen bg-zinc-50 p-8">

@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { useFormStatus } from 'react-dom'
+import { useFormStatus } from 'react-dom';
 
 export function FormButton({ children }: { children: React.ReactNode }) {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <button
       type="submit"
@@ -12,6 +12,6 @@ export function FormButton({ children }: { children: React.ReactNode }) {
     >
       {pending ? 'Processing...' : children}
     </button>
-  )
+  );
 }
 

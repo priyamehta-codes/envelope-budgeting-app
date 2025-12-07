@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import { useActionState } from 'react'
-import { moveToEnvelope } from '../actions'
-import { FormButton } from './FormButton'
+import { useActionState } from 'react';
+import { moveToEnvelope } from '../actions';
+import { FormButton } from './FormButton';
 
 type Envelope = {
-  id: string
-  name: string
-  balance: number
-}
+  id: string;
+  name: string;
+  balance: number;
+};
 
 export function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
-  const [state, formAction] = useActionState(moveToEnvelope, null)
+  const [state, formAction] = useActionState(moveToEnvelope, null);
 
   return (
     <form action={formAction} className="flex gap-4">
@@ -41,6 +41,6 @@ export function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
         <div className="text-red-600">{state.error}</div>
       )}
     </form>
-  )
+  );
 }
 

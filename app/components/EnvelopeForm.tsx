@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useActionState } from 'react'
-import { createEnvelope } from '../actions'
-import { FormButton } from './FormButton'
+import { useActionState } from 'react';
+import { createEnvelope } from '../actions';
+import { FormButton } from './FormButton';
 
 export function EnvelopeForm() {
-  const [state, formAction] = useActionState(createEnvelope, null)
+  const [state, formAction] = useActionState(createEnvelope, null);
 
   return (
     <form action={formAction} className="mb-4 flex gap-4">
@@ -21,6 +21,6 @@ export function EnvelopeForm() {
         <div className="text-red-600">{state.error}</div>
       )}
     </form>
-  )
+  );
 }
 

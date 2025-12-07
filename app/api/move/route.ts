@@ -1,16 +1,16 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
 
 export async function POST(request: Request) {
-  const { envelopeId, amount } = await request.json()
+  const { envelopeId, amount } = await request.json();
   
   // Get current income balance
-  const income = await prisma.income.findFirst()
+  const income = await prisma.income.findFirst();
   if (!income || income.balance < amount) {
     return NextResponse.json(
       { error: 'Insufficient income balance' },
       { status: 400 }
-    )
+    );
   }
   
   // Update income and envelope in a transaction
@@ -23,8 +23,8 @@ export async function POST(request: Request) {
       where: { id: envelopeId },
       data: { balance: { increment: amount } },
     }),
-  ])
+  ]);
   
-  return NextResponse.json({ success: true })
+  return NextResponse.json({ success: true });
 }
 
