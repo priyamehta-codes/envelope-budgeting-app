@@ -1,8 +1,8 @@
 'use client';
 
 import { useActionState } from 'react';
-import { spendFromEnvelope } from '../actions';
-import { FormButton } from './FormButton';
+import { spendFromEnvelope } from '@/app/actions';
+import { FormButton } from '@/app/components/FormButton';
 
 type Envelope = {
   id: string;

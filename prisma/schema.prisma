@@ -21,4 +21,3 @@ model Income {
   amount  Float
   balance Float   @default(0)
 }
-

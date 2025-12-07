@@ -1,8 +1,8 @@
 import { prisma } from '@/lib/prisma';
-import { IncomeForm } from './components/IncomeForm';
-import { EnvelopeForm } from './components/EnvelopeForm';
-import { MoveForm } from './components/MoveForm';
-import { SpendForm } from './components/SpendForm';
+import { IncomeForm } from '@/app/components/IncomeForm';
+import { EnvelopeForm } from '@/app/components/EnvelopeForm';
+import { MoveForm } from '@/app/components/MoveForm';
+import { SpendForm } from '@/app/components/SpendForm';
 
 async function getData() {
   const envelopes = await prisma.envelope.findMany({
@@ -76,5 +76,5 @@ export default async function Home() {
         </section>
       </div>
     </div>
-  )
+  );
 }

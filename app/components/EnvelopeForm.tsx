@@ -1,8 +1,8 @@
 'use client';
 
 import { useActionState } from 'react';
-import { createEnvelope } from '../actions';
-import { FormButton } from './FormButton';
+import { createEnvelope } from '@/app/actions';
+import { FormButton } from '@/app/components/FormButton';
 
 export function EnvelopeForm() {
   const [state, formAction] = useActionState(createEnvelope, null);
