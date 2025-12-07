@@ -3,7 +3,9 @@
 import { prisma } from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
 
-export async function addIncome(prevState: any, formData: FormData) {
+type ActionState = { success?: boolean; error?: string } | null
+
+export async function addIncome(prevState: ActionState, formData: FormData) {
   const amount = parseFloat(formData.get('amount') as string)
   
   if (isNaN(amount) || amount <= 0) {
@@ -27,7 +29,7 @@ export async function addIncome(prevState: any, formData: FormData) {
   return { success: true }
 }
 
-export async function createEnvelope(prevState: any, formData: FormData) {
+export async function createEnvelope(prevState: ActionState, formData: FormData) {
   const name = formData.get('name') as string
   
   if (!name || name.trim() === '') {
@@ -42,7 +44,7 @@ export async function createEnvelope(prevState: any, formData: FormData) {
   return { success: true }
 }
 
-export async function moveToEnvelope(prevState: any, formData: FormData) {
+export async function moveToEnvelope(prevState: ActionState, formData: FormData) {
   const envelopeId = formData.get('envelopeId') as string
   const amount = parseFloat(formData.get('amount') as string)
   
@@ -70,7 +72,7 @@ export async function moveToEnvelope(prevState: any, formData: FormData) {
   return { success: true }
 }
 
-export async function spendFromEnvelope(prevState: any, formData: FormData) {
+export async function spendFromEnvelope(prevState: ActionState, formData: FormData) {
   const envelopeId = formData.get('envelopeId') as string
   const amount = parseFloat(formData.get('amount') as string)
   
