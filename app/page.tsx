@@ -27,22 +27,22 @@ export default async function Home() {
           Envelope Budgeting App
         </h1>
         {/* Income Section */}
-        <section className="rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
+        <section className="space-y-4 rounded-lg bg-white p-6 shadow">
+          <h2 className="text-2xl font-semibold text-zinc-800">
             Income
           </h2>
-          <div className="mb-4 text-xl font-medium text-green-600">
+          <div className="text-xl font-medium text-green-600">
             Balance: ${incomeBalance.toFixed(2)}
           </div>
           <IncomeForm />
         </section>
         {/* Envelopes Section */}
-        <section className="rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
+        <section className="space-y-4 rounded-lg bg-white p-6 shadow">
+          <h2 className="text-2xl font-semibold text-zinc-800">
             Envelopes
           </h2>
           <EnvelopeForm />
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {envelopes.map((envelope) => (
               <div
                 key={envelope.id}
@@ -59,15 +59,15 @@ export default async function Home() {
           </div>
         </section>
         {/* Move Money Section */}
-        <section className="rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
+        <section className="space-y-4 rounded-lg bg-white p-6 shadow">
+          <h2 className="text-2xl font-semibold text-zinc-800">
             Move Money to Envelope
           </h2>
           <MoveForm envelopes={envelopes} />
         </section>
         {/* Spend Money Section */}
-        <section className="rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
+        <section className="space-y-4 rounded-lg bg-white p-6 shadow">
+          <h2 className="text-2xl font-semibold text-zinc-800">
             Spend from Envelope
           </h2>
           <SpendForm envelopes={envelopes} />
