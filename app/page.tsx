@@ -1,13 +1,13 @@
-import { prisma } from '@/lib/prisma';
-import IncomeForm from '@/components/IncomeForm';
-import EnvelopeForm from '@/components/EnvelopeForm';
-import MoveForm from '@/components/MoveForm';
-import SpendForm from '@/components/SpendForm';
-import Card from '@/components/Card';
+import { prisma } from "@/lib/prisma";
+import IncomeForm from "@/components/IncomeForm";
+import EnvelopeForm from "@/components/EnvelopeForm";
+import MoveForm from "@/components/MoveForm";
+import SpendForm from "@/components/SpendForm";
+import Card from "@/components/Card";
 
 async function getData() {
   const envelopes = await prisma.envelope.findMany({
-    orderBy: { name: 'asc' }
+    orderBy: { name: "asc" }
   });
 
   const income = await prisma.income.findFirst();

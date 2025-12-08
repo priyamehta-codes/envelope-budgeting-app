@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useFormStatus } from 'react-dom';
+import { useFormStatus } from "react-dom";
 
 function FormButton({ children }: { children: React.ReactNode }) {
   const { pending } = useFormStatus();
@@ -10,7 +10,7 @@ function FormButton({ children }: { children: React.ReactNode }) {
       disabled={pending}
       className="rounded bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700 disabled:bg-blue-400"
     >
-      {pending ? 'Processing...' : children}
+      {pending ? "Processing..." : children}
     </button>
   );
 }

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useActionState } from 'react';
-import { spendFromEnvelope } from '@/app/actions';
-import FormButton from '@/components/FormButton';
+import { useActionState } from "react";
+import { spendFromEnvelope } from "@/app/actions";
+import FormButton from "@/components/FormButton";
 
 type Envelope = {
   id: string;
@@ -20,7 +20,7 @@ function SpendForm({ envelopes }: { envelopes: Envelope[] }) {
         required
         className="rounded border border-zinc-300 px-4 py-2"
       >
-        <option value="">Select envelope</option>
+        <option value={""}>Select envelope</option>
         {envelopes.map((envelope) => (
           <option key={envelope.id} value={envelope.id}>
             {envelope.name}

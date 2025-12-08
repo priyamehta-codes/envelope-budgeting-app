@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useActionState } from 'react';
-import { addIncome } from '@/app/actions';
-import FormButton from '@/components/FormButton';
+import { useActionState } from "react";
+import { addIncome } from "@/app/actions";
+import FormButton from "@/components/FormButton";
 
 function IncomeForm() {
   const [state, formAction] = useActionState(addIncome, null);

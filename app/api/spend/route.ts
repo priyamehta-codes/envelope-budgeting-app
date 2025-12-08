@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: Request) {
   const { envelopeId, amount } = await request.json();
@@ -10,14 +10,14 @@ export async function POST(request: Request) {
   
   if (!envelope) {
     return NextResponse.json(
-      { error: 'Envelope not found' },
+      { error: "Envelope not found" },
       { status: 404 }
     );
   }
   
   if (envelope.balance < amount) {
     return NextResponse.json(
-      { error: 'Insufficient envelope balance' },
+      { error: "Insufficient envelope balance" },
       { status: 400 }
     );
   }
