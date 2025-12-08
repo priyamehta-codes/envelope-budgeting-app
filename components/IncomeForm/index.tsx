@@ -16,8 +16,7 @@ function IncomeForm() {
         min="0"
         placeholder="Amount"
         required
-        className="flex-1 rounded border border-zinc-300 px-4 py-2"
-      />
+        className="flex-1 rounded border border-zinc-300 px-4 py-2" />
       <FormButton>Add Income</FormButton>
       {state?.error && (
         <div className="text-red-600">{state.error}</div>
