@@ -62,16 +62,16 @@ export async function moveToEnvelope(prevState: ActionState, formData: FormData)
   await prisma.$transaction([
     prisma.income.update({
       where: { id: income.id },
-      data: { balance: { decrement: amount } },
+      data: { balance: { decrement: amount } }
     }),
     prisma.envelope.update({
       where: { id: envelopeId },
       data: { balance: { increment: amount } }
-    }),
+    })
   ]);
   
   revalidatePath("/");
-  
+
   return { success: true };
 }
 
@@ -84,7 +84,7 @@ export async function spendFromEnvelope(prevState: ActionState, formData: FormDa
   }
   
   const envelope = await prisma.envelope.findUnique({
-    where: { id: envelopeId },
+    where: { id: envelopeId }
   });
   
   if (!envelope) {
@@ -97,7 +97,7 @@ export async function spendFromEnvelope(prevState: ActionState, formData: FormDa
   
   await prisma.envelope.update({
     where: { id: envelopeId },
-    data: { balance: { decrement: amount } },
+    data: { balance: { decrement: amount } }
   });
   
   revalidatePath("/");

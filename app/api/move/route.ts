@@ -17,12 +17,12 @@ export async function POST(request: Request) {
   await prisma.$transaction([
     prisma.income.update({
       where: { id: income.id },
-      data: { balance: { decrement: amount } },
+      data: { balance: { decrement: amount } }
     }),
     prisma.envelope.update({
       where: { id: envelopeId },
-      data: { balance: { increment: amount } },
-    }),
+      data: { balance: { increment: amount } }
+    })
   ]);
   
   return NextResponse.json({ success: true });

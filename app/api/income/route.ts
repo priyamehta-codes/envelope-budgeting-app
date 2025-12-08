@@ -10,11 +10,11 @@ export async function POST(request: Request) {
   if (income) {
     updatedIncome = await prisma.income.update({
       where: { id: income.id },
-      data: { balance: { increment: amount } },
+      data: { balance: { increment: amount } }
     });
   } else {
     updatedIncome = await prisma.income.create({
-      data: { balance: amount },
+      data: { balance: amount }
     });
   }
   

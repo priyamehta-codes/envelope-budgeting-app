@@ -5,7 +5,7 @@ export async function POST(request: Request) {
   const { envelopeId, amount } = await request.json();
   
   const envelope = await prisma.envelope.findUnique({
-    where: { id: envelopeId },
+    where: { id: envelopeId }
   });
   
   if (!envelope) {
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   
   const updated = await prisma.envelope.update({
     where: { id: envelopeId },
-    data: { balance: { decrement: amount } },
+    data: { balance: { decrement: amount } }
   });
   
   return NextResponse.json(updated);
