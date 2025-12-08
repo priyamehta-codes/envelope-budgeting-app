@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+
 import { addIncome } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 

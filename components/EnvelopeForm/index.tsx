@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+
 import { createEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 
@@ -14,8 +15,7 @@ function EnvelopeForm() {
         name="name"
         placeholder="Envelope name"
         required
-        className="flex-1 rounded border border-zinc-300 px-4 py-2"
-      />
+        className="flex-1 rounded border border-zinc-300 px-4 py-2" />
       <FormButton>Create Envelope</FormButton>
       {state?.error && (
         <div className="text-red-600">{state.error}</div>

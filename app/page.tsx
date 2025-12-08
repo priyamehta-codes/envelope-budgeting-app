@@ -38,15 +38,15 @@ export default async function Home() {
         <Card title="Envelopes">
           <EnvelopeForm />
           <div className="grid gap-4 md:grid-cols-2">
-            {envelopes.map((envelope) => (
+            {envelopes.map((item) => (
               <div
-                key={envelope.id}
+                key={item.id}
                 className="rounded-lg border border-zinc-200 p-4">
                 <h3 className="text-lg font-semibold text-zinc-800">
-                  {envelope.name}
+                  {item.name}
                 </h3>
                 <p className="text-xl font-medium text-blue-600">
-                  ${envelope.balance.toFixed(2)}
+                  ${item.balance.toFixed(2)}
                 </p>
               </div>
             ))}

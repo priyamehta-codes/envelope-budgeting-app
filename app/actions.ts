@@ -26,6 +26,7 @@ export async function addIncome(prevState: ActionState, formData: FormData) {
   }
   
   revalidatePath("/");
+
   return { success: true };
 }
 
@@ -37,10 +38,11 @@ export async function createEnvelope(prevState: ActionState, formData: FormData)
   }
   
   await prisma.envelope.create({
-    data: { name: name.trim(), balance: 0 },
+    data: { name: name.trim(), balance: 0 }
   });
   
   revalidatePath("/");
+  
   return { success: true };
 }
 
