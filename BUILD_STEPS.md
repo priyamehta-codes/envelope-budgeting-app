@@ -13,7 +13,7 @@
    pnpm add -D dotenv
    ```
    
-   **Note:** After installing Prisma packages, run `pnpm approve-build` to approve the Prisma build scripts.
+   **Note:** After installing Prisma packages, run `pnpm approve-builds` to approve the Prisma build scripts.
 
 3. Initialize Prisma with SQLite:
    ```bash
