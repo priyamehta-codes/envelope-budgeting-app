@@ -8,7 +8,9 @@ async function getData() {
   const envelopes = await prisma.envelope.findMany({
     orderBy: { name: 'asc' },
   });
+
   const income = await prisma.income.findFirst();
+
   return {
     envelopes,
     incomeBalance: income?.balance ?? 0,
@@ -20,13 +22,13 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-zinc-50 p-8">
-      <div className="mx-auto max-w-4xl">
-        <h1 className="mb-8 text-4xl font-bold text-zinc-900">
+      <div className="mx-auto max-w-4xl space-y-8">
+        <h1 className="text-4xl font-bold text-zinc-900">
           Envelope Budgeting App
         </h1>
 
         {/* Income Section */}
-        <section className="mb-8 rounded-lg bg-white p-6 shadow">
+        <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
             Income
           </h2>
@@ -37,7 +39,7 @@ export default async function Home() {
         </section>
 
         {/* Envelopes Section */}
-        <section className="mb-8 rounded-lg bg-white p-6 shadow">
+        <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
             Envelopes
           </h2>
@@ -60,7 +62,7 @@ export default async function Home() {
         </section>
 
         {/* Move Money Section */}
-        <section className="mb-8 rounded-lg bg-white p-6 shadow">
+        <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
             Move Money to Envelope
           </h2>
@@ -68,7 +70,7 @@ export default async function Home() {
         </section>
 
         {/* Spend Money Section */}
-        <section className="mb-8 rounded-lg bg-white p-6 shadow">
+        <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
             Spend from Envelope
           </h2>
