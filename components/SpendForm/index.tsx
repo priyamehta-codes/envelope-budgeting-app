@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { spendFromEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
+import Input from "@/components/ui/Input";
 
 type Envelope = {
   id: string;
@@ -27,15 +28,14 @@ function SpendForm({ envelopes }: { envelopes: Envelope[] }) {
           </option>
         ))}
       </select>
-      <input
+      <Input
         type="number"
         name="amount"
         step="0.01"
         min="0"
         placeholder="Amount"
         required
-        className="flex-1 rounded border border-zinc-300 px-4 py-2"
-      />
+        className="flex-1" />
       <FormButton>Spend</FormButton>
       {state?.error && (
         <div className="text-red-600">{state.error}</div>
