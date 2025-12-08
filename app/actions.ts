@@ -66,11 +66,12 @@ export async function moveToEnvelope(prevState: ActionState, formData: FormData)
     }),
     prisma.envelope.update({
       where: { id: envelopeId },
-      data: { balance: { increment: amount } },
+      data: { balance: { increment: amount } }
     }),
   ]);
   
   revalidatePath("/");
+  
   return { success: true };
 }
 

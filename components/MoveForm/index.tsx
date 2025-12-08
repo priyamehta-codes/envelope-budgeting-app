@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+
 import { moveToEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 
@@ -18,12 +19,11 @@ function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
       <select
         name="envelopeId"
         required
-        className="rounded border border-zinc-300 px-4 py-2"
-      >
+        className="rounded border border-zinc-300 px-4 py-2">
         <option value={""}>Select envelope</option>
-        {envelopes.map((envelope) => (
-          <option key={envelope.id} value={envelope.id}>
-            {envelope.name}
+        {envelopes.map((item) => (
+          <option key={item.id} value={item.id}>
+            {item.name}
           </option>
         ))}
       </select>
@@ -34,8 +34,7 @@ function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
         min="0"
         placeholder="Amount"
         required
-        className="flex-1 rounded border border-zinc-300 px-4 py-2"
-      />
+        className="flex-1 rounded border border-zinc-300 px-4 py-2" />
       <FormButton>Move</FormButton>
       {state?.error && (
         <div className="text-red-600">{state.error}</div>
