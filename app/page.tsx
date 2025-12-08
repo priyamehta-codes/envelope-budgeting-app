@@ -1,8 +1,8 @@
 import { prisma } from '@/lib/prisma';
-import { IncomeForm } from '@/components/IncomeForm';
-import { EnvelopeForm } from '@/components/EnvelopeForm';
-import { MoveForm } from '@/components/MoveForm';
-import { SpendForm } from '@/components/SpendForm';
+import IncomeForm from '@/components/IncomeForm';
+import EnvelopeForm from '@/components/EnvelopeForm';
+import MoveForm from '@/components/MoveForm';
+import SpendForm from '@/components/SpendForm';
 import Card from '@/components/Card';
 
 async function getData() {

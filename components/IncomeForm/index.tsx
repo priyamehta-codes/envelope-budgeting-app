@@ -2,9 +2,9 @@
 
 import { useActionState } from 'react';
 import { addIncome } from '@/app/actions';
-import { FormButton } from '@/components/FormButton';
+import FormButton from '@/components/FormButton';
 
-export function IncomeForm() {
+function IncomeForm() {
   const [state, formAction] = useActionState(addIncome, null);
 
   return (
@@ -26,3 +26,4 @@ export function IncomeForm() {
   );
 }
 
+export default IncomeForm;

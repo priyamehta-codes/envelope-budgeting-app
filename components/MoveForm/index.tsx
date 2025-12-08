@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react';
 import { moveToEnvelope } from '@/app/actions';
-import { FormButton } from '@/components/FormButton';
+import FormButton from '@/components/FormButton';
 
 type Envelope = {
   id: string;
@@ -10,7 +10,7 @@ type Envelope = {
   balance: number;
 };
 
-export function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
+function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
   const [state, formAction] = useActionState(moveToEnvelope, null);
 
   return (
@@ -44,3 +44,4 @@ export function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
   );
 }
 
+export default MoveForm;

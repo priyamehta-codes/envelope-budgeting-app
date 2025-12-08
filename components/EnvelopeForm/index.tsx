@@ -2,9 +2,9 @@
 
 import { useActionState } from 'react';
 import { createEnvelope } from '@/app/actions';
-import { FormButton } from '@/components/FormButton';
+import FormButton from '@/components/FormButton';
 
-export function EnvelopeForm() {
+function EnvelopeForm() {
   const [state, formAction] = useActionState(createEnvelope, null);
 
   return (
@@ -24,3 +24,4 @@ export function EnvelopeForm() {
   );
 }
 
+export default EnvelopeForm;

@@ -2,7 +2,7 @@
 
 import { useFormStatus } from 'react-dom';
 
-export function FormButton({ children }: { children: React.ReactNode }) {
+function FormButton({ children }: { children: React.ReactNode }) {
   const { pending } = useFormStatus();
   return (
     <button
@@ -15,3 +15,4 @@ export function FormButton({ children }: { children: React.ReactNode }) {
   );
 }
 
+export default FormButton;
