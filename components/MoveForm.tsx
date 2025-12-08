@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react';
 import { moveToEnvelope } from '@/app/actions';
-import { FormButton } from '@/app/components/FormButton';
+import { FormButton } from '@/components/FormButton';
 
 type Envelope = {
   id: string;

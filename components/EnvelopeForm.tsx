@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react';
 import { createEnvelope } from '@/app/actions';
-import { FormButton } from '@/app/components/FormButton';
+import { FormButton } from '@/components/FormButton';
 
 export function EnvelopeForm() {
   const [state, formAction] = useActionState(createEnvelope, null);
