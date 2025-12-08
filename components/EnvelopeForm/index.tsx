@@ -11,7 +11,7 @@ function EnvelopeForm() {
   const [state, formAction] = useActionState(createEnvelope, null);
 
   return (
-    <form action={formAction} className="mb-4 flex gap-4">
+    <form action={formAction} className="flex gap-4">
       <Input
         type="text"
         name="name"

@@ -20,9 +20,9 @@ function SpendForm({ envelopes }: { envelopes: Envelope[] }) {
     <form action={formAction} className="flex gap-4">
       <Select name="envelopeId" required>
         <option value={""}>Select envelope</option>
-        {envelopes.map((envelope) => (
-          <option key={envelope.id} value={envelope.id}>
-            {envelope.name}
+        {envelopes.map((item) => (
+          <option key={item.id} value={item.id}>
+            {item.name}
           </option>
         ))}
       </Select>

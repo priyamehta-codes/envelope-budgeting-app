@@ -101,5 +101,6 @@ export async function spendFromEnvelope(prevState: ActionState, formData: FormDa
   });
   
   revalidatePath("/");
+  
   return { success: true };
 }

@@ -9,8 +9,8 @@
 
 2. Install Prisma:
    ```bash
-   pnpm add @prisma/client prisma
-   pnpm add -D @types/node
+   pnpm add @prisma/client@^6.19.0 prisma@^6.19.0
+   pnpm add -D dotenv
    ```
 
 3. Initialize Prisma with SQLite:
