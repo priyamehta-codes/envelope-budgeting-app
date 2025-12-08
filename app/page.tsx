@@ -6,14 +6,14 @@ import { SpendForm } from '@/app/components/SpendForm';
 
 async function getData() {
   const envelopes = await prisma.envelope.findMany({
-    orderBy: { name: 'asc' },
+    orderBy: { name: 'asc' }
   });
 
   const income = await prisma.income.findFirst();
 
   return {
     envelopes,
-    incomeBalance: income?.balance ?? 0,
+    incomeBalance: income?.balance ?? 0
   };
 }
 
@@ -26,7 +26,6 @@ export default async function Home() {
         <h1 className="text-4xl font-bold text-zinc-900">
           Envelope Budgeting App
         </h1>
-
         {/* Income Section */}
         <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
@@ -37,7 +36,6 @@ export default async function Home() {
           </div>
           <IncomeForm />
         </section>
-
         {/* Envelopes Section */}
         <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
@@ -60,7 +58,6 @@ export default async function Home() {
             ))}
           </div>
         </section>
-
         {/* Move Money Section */}
         <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
@@ -68,7 +65,6 @@ export default async function Home() {
           </h2>
           <MoveForm envelopes={envelopes} />
         </section>
-
         {/* Spend Money Section */}
         <section className="rounded-lg bg-white p-6 shadow">
           <h2 className="mb-4 text-2xl font-semibold text-zinc-800">
