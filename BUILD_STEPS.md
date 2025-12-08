@@ -20,9 +20,16 @@
    pnpm prisma init --datasource-provider sqlite
    ```
 
+4. Set up environment variable:
+   - The `prisma init` command creates a `.env` file in the root directory
+   - Ensure it contains the `DATABASE_URL` environment variable:
+     ```env
+     DATABASE_URL="file:./dev.db"
+     ```
+
 ## Database Schema
 
-4. Update `prisma/schema.prisma`:
+5. Update `prisma/schema.prisma`:
    ```prisma
    model Envelope {
      id      String  @id @default(cuid())
@@ -36,13 +43,13 @@
    }
    ```
 
-5. Generate Prisma Client and run migration:
+6. Generate Prisma Client and run migration:
    ```bash
    pnpm prisma generate
    pnpm prisma migrate dev --name init
    ```
 
-6. Update `package.json` scripts:
+7. Update `package.json` scripts:
    - Update the `build` script to include Prisma generation:
      ```json
      "build": "prisma generate && next build"
@@ -54,7 +61,7 @@
 
 ## Prisma Client Setup
 
-7. Create `lib/prisma.ts`:
+8. Create `lib/prisma.ts`:
    ```typescript
    import { PrismaClient } from "@prisma/client";
 
@@ -69,7 +76,7 @@
 
 ## Server Actions
 
-8. Create `app/actions.ts` with server actions (use Prisma directly):
+9. Create `app/actions.ts` with server actions (use Prisma directly):
     - `addIncome`: Find first income or create, increment balance, revalidatePath
     - `createEnvelope`: Create envelope with name and balance: 0, revalidatePath
     - `moveToEnvelope`: Transaction to decrement income and increment envelope, revalidatePath
@@ -77,14 +84,14 @@
 
 ## UI Components
 
-9. Create reusable components:
+10. Create reusable components:
     - `components/ui/Input/index.tsx` - Input wrapper
     - `components/ui/Select/index.tsx` - Select wrapper
     - `components/Card/index.tsx` - Card container
     - `components/FormButton/index.tsx` - Submit button with loading state
     - `components/ErrorMessage/index.tsx` - Error display
 
-10. Create form components:
+11. Create form components:
     - `components/IncomeForm/index.tsx` - Add income form (useActionState)
     - `components/EnvelopeForm/index.tsx` - Create envelope form (useActionState)
     - `components/MoveForm/index.tsx` - Move money form (useActionState, select envelope)
@@ -92,7 +99,7 @@
 
 ## Main Page
 
-11. Update `app/page.tsx`:
+12. Update `app/page.tsx`:
     - Fetch envelopes and income balance (server component)
     - Display income balance
     - Show list of envelopes with balances
@@ -100,7 +107,7 @@
 
 ## Styling
 
-12. Style with TailwindCSS:
+13. Style with TailwindCSS:
     - Use Card component for sections
     - Green for income, blue for envelope balances
     - Responsive grid for envelope list
@@ -108,7 +115,7 @@
 
 ## Testing
 
-13. Test the flow:
+14. Test the flow:
     - Add income
     - Create envelopes
     - Move money from income to envelopes
