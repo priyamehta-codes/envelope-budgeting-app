@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { addIncome } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 import Input from "@/components/ui/Input";
+import ErrorMessage from "@/components/ErrorMessage";
 
 function IncomeForm() {
   const [state, formAction] = useActionState(addIncome, null);
@@ -20,9 +21,7 @@ function IncomeForm() {
         required
         className="flex-1" />
       <FormButton>Add Income</FormButton>
-      {state?.error && (
-        <div className="text-red-600">{state.error}</div>
-      )}
+      <ErrorMessage error={state?.error} />
     </form>
   );
 }

@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { createEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 import Input from "@/components/ui/Input";
+import ErrorMessage from "@/components/ErrorMessage";
 
 function EnvelopeForm() {
   const [state, formAction] = useActionState(createEnvelope, null);
@@ -18,9 +19,7 @@ function EnvelopeForm() {
         required
         className="flex-1" />
       <FormButton>Create Envelope</FormButton>
-      {state?.error && (
-        <div className="text-red-600">{state.error}</div>
-      )}
+      <ErrorMessage error={state?.error} />
     </form>
   );
 }

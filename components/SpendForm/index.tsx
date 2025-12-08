@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { spendFromEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 import Input from "@/components/ui/Input";
+import ErrorMessage from "@/components/ErrorMessage";
 
 type Envelope = {
   id: string;
@@ -37,9 +38,7 @@ function SpendForm({ envelopes }: { envelopes: Envelope[] }) {
         required
         className="flex-1" />
       <FormButton>Spend</FormButton>
-      {state?.error && (
-        <div className="text-red-600">{state.error}</div>
-      )}
+      <ErrorMessage error={state?.error} />
     </form>
   );
 }
