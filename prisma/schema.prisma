@@ -18,6 +18,5 @@ model Envelope {
 
 model Income {
   id      String  @id @default(cuid())
-  amount  Float
   balance Float   @default(0)
 }

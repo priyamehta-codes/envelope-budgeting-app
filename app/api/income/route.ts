@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     });
   } else {
     updatedIncome = await prisma.income.create({
-      data: { amount, balance: amount },
+      data: { balance: amount },
     });
   }
   

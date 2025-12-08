@@ -17,11 +17,11 @@ export async function addIncome(prevState: ActionState, formData: FormData) {
   if (income) {
     await prisma.income.update({
       where: { id: income.id },
-      data: { balance: { increment: amount } },
+      data: { balance: { increment: amount } }
     });
   } else {
     await prisma.income.create({
-      data: { amount, balance: amount },
+      data: { balance: amount }
     });
   }
   
