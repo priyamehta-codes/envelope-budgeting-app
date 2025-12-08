@@ -10,6 +10,8 @@ A modern, full-stack envelope budgeting application built with Next.js, React, a
 - **Expense Tracking**: Record spending from envelopes and automatically update balances
 - **Real-time Updates**: See balance changes instantly with server-side rendering
 - **Responsive Design**: Beautiful, modern UI that works on all devices
+- **Reusable Components**: Well-structured, reusable UI components for consistent styling and behavior
+- **Type-Safe**: Full TypeScript support with proper type definitions
 
 ## Tech Stack
 
@@ -122,15 +124,20 @@ envelope-budgeting-app/
 │   │   ├── income/
 │   │   ├── move/
 │   │   └── spend/
-│   ├── components/             # React components
-│   │   ├── EnvelopeForm.tsx
-│   │   ├── IncomeForm.tsx
-│   │   ├── MoveForm.tsx
-│   │   ├── SpendForm.tsx
-│   │   └── FormButton.tsx
 │   ├── globals.css             # Global styles
 │   ├── layout.tsx              # Root layout
 │   └── page.tsx                # Home page
+├── components/
+│   ├── ui/                     # Reusable UI components
+│   │   ├── Input/              # Reusable input component
+│   │   └── Select/             # Reusable select component
+│   ├── Card/                   # Card container component
+│   ├── EnvelopeForm/           # Envelope creation form
+│   ├── ErrorMessage/           # Error message display component
+│   ├── FormButton/             # Form submit button component
+│   ├── IncomeForm/             # Income addition form
+│   ├── MoveForm/               # Money movement form
+│   └── SpendForm/              # Spending form
 ├── lib/
 │   └── prisma.ts               # Prisma client singleton
 ├── prisma/
