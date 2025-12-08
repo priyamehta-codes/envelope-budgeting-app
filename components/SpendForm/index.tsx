@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { spendFromEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 import Input from "@/components/ui/Input";
+import Select from "@/components/ui/Select";
 import ErrorMessage from "@/components/ErrorMessage";
 
 type Envelope = {
@@ -17,18 +18,14 @@ function SpendForm({ envelopes }: { envelopes: Envelope[] }) {
 
   return (
     <form action={formAction} className="flex gap-4">
-      <select
-        name="envelopeId"
-        required
-        className="rounded border border-zinc-300 px-4 py-2"
-      >
+      <Select name="envelopeId" required>
         <option value={""}>Select envelope</option>
         {envelopes.map((envelope) => (
           <option key={envelope.id} value={envelope.id}>
             {envelope.name}
           </option>
         ))}
-      </select>
+      </Select>
       <Input
         type="number"
         name="amount"

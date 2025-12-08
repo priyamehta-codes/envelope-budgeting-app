@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { moveToEnvelope } from "@/app/actions";
 import FormButton from "@/components/FormButton";
 import Input from "@/components/ui/Input";
+import Select from "@/components/ui/Select";
 import ErrorMessage from "@/components/ErrorMessage";
 
 type Envelope = {
@@ -18,17 +19,14 @@ function MoveForm({ envelopes }: { envelopes: Envelope[] }) {
 
   return (
     <form action={formAction} className="flex gap-4">
-      <select
-        name="envelopeId"
-        required
-        className="rounded border border-zinc-300 px-4 py-2">
+      <Select name="envelopeId" required>
         <option value={""}>Select envelope</option>
         {envelopes.map((item) => (
           <option key={item.id} value={item.id}>
             {item.name}
           </option>
         ))}
-      </select>
+      </Select>
       <Input
         type="number"
         name="amount"
