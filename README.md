@@ -113,13 +113,17 @@ The envelope budgeting method is a cash-based budgeting system where you:
 - **Move Money**: Transfer funds from your income balance to any envelope.
 - **Spend Money**: Record expenses by deducting money from a specific envelope.
 
+### Architecture Notes
+
+This application uses **Next.js Server Actions** for all data mutations, which directly interact with Prisma. The API routes in `app/api/` are not used in the current implementation but are kept in the codebase for future reference. Server actions provide a simpler, more type-safe approach for form submissions in Next.js App Router.
+
 ## Project Structure
 
 ```
 envelope-budgeting-app/
 ├── app/
 │   ├── actions.ts              # Server actions for form handling
-│   ├── api/                    # API routes
+│   ├── api/                    # API routes (not used - kept for reference)
 │   │   ├── envelopes/
 │   │   ├── income/
 │   │   ├── move/
