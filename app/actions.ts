@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
-type ActionState = { success?: boolean; error?: string } | null;
+type ActionState = { success?: boolean; error?: string; } | null;
 
 export async function addIncome(prevState: ActionState, formData: FormData) {
   const amount = parseFloat(formData.get("amount") as string);
@@ -101,6 +101,6 @@ export async function spendFromEnvelope(prevState: ActionState, formData: FormDa
   });
   
   revalidatePath("/");
-  
+
   return { success: true };
 }
