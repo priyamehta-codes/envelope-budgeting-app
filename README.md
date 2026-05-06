@@ -1,4 +1,4 @@
-# Envelope Budgeting App
+# Envelope Budgeting App 
 
 A modern, full-stack envelope budgeting application built with Next.js, React, and Prisma. This app helps you manage your finances using the envelope budgeting method, where you allocate income into different spending categories (envelopes) and track expenses from each envelope.
 
